@@ -15,6 +15,9 @@ public class IndexController {
 
     @RequestMapping("/")
     public Version index(@RequestParam(value = "name", defaultValue = "World") String name) {
+
+        System.out.println("this text output");
+
         return new Version(counter.incrementAndGet(), "success", String.format(template, name));
     }
 
