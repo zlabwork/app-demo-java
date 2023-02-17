@@ -1,9 +1,8 @@
 package com.zlabwork.genesis.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Date;
 
 @Entity(name = "users")
 public class UserEntity {
@@ -15,6 +14,9 @@ public class UserEntity {
     private String name;
 
     private String email;
+
+    @Column(name = "created_at", nullable = false)
+    private Date date;
 
     public Integer getId() {
         return id;
@@ -38,6 +40,14 @@ public class UserEntity {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Date getDate() {
+        return this.date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
 }
