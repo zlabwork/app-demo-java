@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-public class IndexController {
+public class VersionController {
 
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/")
-    public Version index(@RequestParam(value = "name", defaultValue = "World") String name) {
+    @RequestMapping("/version")
+    public Version version(@RequestParam(value = "name", defaultValue = "World") String name) {
 
         System.out.println("this text output");
 
