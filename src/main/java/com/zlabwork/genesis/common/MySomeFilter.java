@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class MyFilter implements Filter {
+public class MySomeFilter implements Filter {
 
     // public void init(FilterConfig config) throws ServletException { }
 
@@ -14,7 +14,7 @@ public class MyFilter implements Filter {
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
-        System.out.println("MyFilter: " + req.getRequestURI());
+        System.out.println("MySomeFilter: " + req.getRequestURI());
 
         // go on
         filterChain.doFilter(request, response);

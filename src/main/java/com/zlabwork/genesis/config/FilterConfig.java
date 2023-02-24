@@ -1,6 +1,6 @@
 package com.zlabwork.genesis.config;
 
-import com.zlabwork.genesis.common.MyFilter;
+import com.zlabwork.genesis.common.MySomeFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +13,9 @@ import org.springframework.core.Ordered;
 public class FilterConfig {
 
     @Bean
-    public FilterRegistrationBean<MyFilter> myFilter() {
-        FilterRegistrationBean<MyFilter> filterRegBean = new FilterRegistrationBean<>();
-        filterRegBean.setFilter(new MyFilter());
+    public FilterRegistrationBean<MySomeFilter> myFilter() {
+        FilterRegistrationBean<MySomeFilter> filterRegBean = new FilterRegistrationBean<>();
+        filterRegBean.setFilter(new MySomeFilter());
         filterRegBean.addUrlPatterns("/app/*");
         filterRegBean.setOrder(Ordered.LOWEST_PRECEDENCE - 1);
         return filterRegBean;
