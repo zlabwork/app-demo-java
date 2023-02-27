@@ -1,13 +1,11 @@
 package com.zlabwork.genesis.common;
 
 
-import com.zlabwork.genesis.event.MySomeEvent;
 import com.zlabwork.genesis.listener.EventListenerInterface;
-import com.zlabwork.genesis.listener.MyEventListener;
 
 import java.util.*;
 
-public class EventSource {
+public class EventManager {
 
 
     // 事件与监听器映射

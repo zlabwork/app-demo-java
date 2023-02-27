@@ -1,6 +1,6 @@
 package com.zlabwork.genesis;
 
-import com.zlabwork.genesis.common.EventSource;
+import com.zlabwork.genesis.common.EventManager;
 import com.zlabwork.genesis.common.SomeEventSource;
 import com.zlabwork.genesis.event.MySomeEvent;
 import com.zlabwork.genesis.listener.MyEventListener;
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class EventController {
 
     @Autowired
-    private EventSource $eventSource;
+    private EventManager $eventManager;
 
     @GetMapping("/events")
     public @ResponseBody
     String events() {
 
-        $eventSource.trigger(new MySomeEvent("TestEvent"));
+        $eventManager.trigger(new MySomeEvent("TestEvent"));
         return "test event completed";
 
     }
