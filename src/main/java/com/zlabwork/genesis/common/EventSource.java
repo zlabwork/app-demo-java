@@ -26,6 +26,10 @@ public class EventSource {
     // 触发
     public void trigger(EventObject event) {
         List<EventListenerInterface> listeners = eventMaps.get(event.toString());
+        if (listeners == null) {
+            System.out.println("can not find listeners with key: " + event.toString());
+            return;
+        }
         for (EventListenerInterface listener : listeners) {
             listener.handle(event);
         }
