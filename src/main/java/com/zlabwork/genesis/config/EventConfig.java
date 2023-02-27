@@ -15,8 +15,8 @@ public class EventConfig {
 
     @Bean
     public EventManager eventManager() {
-        EventManager src = new EventManager();
-        src.setEventMaps(new HashMap<>() {{
+        EventManager manager = new EventManager();
+        manager.setEventMaps(new HashMap<>() {{
 
             // TODO:: events and listeners map
             put((new MySomeEvent("TestEvent")).toString(), new ArrayList<>() {{
@@ -26,7 +26,7 @@ public class EventConfig {
 
         }});
 
-        return src;
+        return manager;
     }
 
 }
