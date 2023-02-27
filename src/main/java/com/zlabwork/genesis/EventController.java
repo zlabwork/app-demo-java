@@ -1,8 +1,10 @@
 package com.zlabwork.genesis;
 
-import com.zlabwork.genesis.common.MyEventSource;
+import com.zlabwork.genesis.common.EventSource;
+import com.zlabwork.genesis.common.SomeEventSource;
 import com.zlabwork.genesis.event.MySomeEvent;
 import com.zlabwork.genesis.listener.MyEventListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,13 +13,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class EventController {
 
+    @Autowired
+    private EventSource $eventSource;
 
     @GetMapping("/events")
     public @ResponseBody
     String events() {
 
+        $eventSource.trigger(new MySomeEvent("TestEvent"));
+        return "test event completed";
+
+    }
+
+    @GetMapping("/events/some")
+    public @ResponseBody
+    String someEvent() {
+
         // 定义1个事件源
-        MyEventSource source = new MyEventSource();
+        SomeEventSource source = new SomeEventSource();
 
         // 定义2个监听器
         MyEventListener listener1 = new MyEventListener("Listener1");

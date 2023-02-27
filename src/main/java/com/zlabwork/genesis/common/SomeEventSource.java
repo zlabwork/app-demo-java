@@ -3,11 +3,9 @@ package com.zlabwork.genesis.common;
 
 import com.zlabwork.genesis.listener.EventListenerInterface;
 
-import java.util.ArrayList;
-import java.util.EventObject;
-import java.util.List;
+import java.util.*;
 
-public class MyEventSource {
+public class SomeEventSource {
 
     // 监听器集合
     private List<EventListenerInterface> listeners = new ArrayList<>();
