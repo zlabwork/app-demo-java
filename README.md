@@ -11,6 +11,44 @@
 java -jar build/libs/genesis-0.0.1-SNAPSHOT.jar
 ```
 
+
+
+## Request Params
+
+```java
+// Var in URL path
+// e.g. /user/123
+
+@RequestMapping("/user/{id}")
+public String getUser(@PathVariable String id)
+```
+
+```java
+// GET, POST or PUT
+
+public String getParam(@RequestParam Map<String, String> map) {}
+
+public String getParam(@RequestParam String name, int age) {}
+
+public String getParam(
+        @RequestParam String name,
+        int age,
+        @RequestParam(name = "email", required = false, defaultValue = "") String email,
+        String address
+) {}
+```
+
+```java
+// RAW Request Body
+// Request header type
+// Content-Type: application/json
+
+public String getParam(@RequestBody UserEntity obj){}
+
+public String getParam(@RequestBody Map<String, String> map){}
+```
+
+
 ## Resource
 https://www.concretepage.com/spring-boot  
 https://start.aliyun.com  
