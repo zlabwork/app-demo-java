@@ -6,6 +6,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import com.zlabwork.genesis.entity.UserEntity;
 import com.zlabwork.genesis.message.CommonResult;
 import com.zlabwork.genesis.message.Version;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,6 +21,11 @@ public class VersionController {
     @RequestMapping("/version")
     public Version version(@RequestParam(value = "name", defaultValue = "World") String name) {
 
+        // 日志
+        Logger logger = LoggerFactory.getLogger(VersionController.class);
+        logger.info("Hello World");
+
+        // 打印
         System.out.println("this text output");
 
         return new Version(counter.incrementAndGet(), "success", String.format(template, name));
