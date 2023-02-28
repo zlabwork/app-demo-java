@@ -17,8 +17,8 @@ public class EventController {
     private EventManager $eventManager;
 
     @GetMapping("/events")
-    public @ResponseBody
-    String events() {
+    @ResponseBody
+    public String events() {
 
         $eventManager.trigger(new MySomeEvent("TestEvent"));
         return "test event completed";
@@ -26,8 +26,8 @@ public class EventController {
     }
 
     @GetMapping("/events/some")
-    public @ResponseBody
-    String someEvent() {
+    @ResponseBody
+    public String someEvent() {
 
         // 定义1个事件源
         SomeEventSource source = new SomeEventSource();

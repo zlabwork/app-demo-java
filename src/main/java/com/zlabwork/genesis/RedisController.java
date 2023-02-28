@@ -16,8 +16,8 @@ public class RedisController {
     private StringRedisTemplate stringRedisTemplate;
 
     @GetMapping(path = "/index")
-    public @ResponseBody
-    String indexPage() {
+    @ResponseBody
+    public String indexPage() {
 
         Set<String> data = stringRedisTemplate.opsForZSet().range("TEST_KEY:123456", 0, -1);
         System.out.println(data);
