@@ -11,6 +11,9 @@
 java -jar build/libs/genesis-0.0.1-SNAPSHOT.jar
 ```
 
+## Resource
+https://www.concretepage.com/spring-boot  
+
 ## Demo Project
 https://github.com/macrozheng/mall-learning  
 https://github.com/macrozheng/mall-tiny  
