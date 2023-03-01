@@ -1,4 +1,4 @@
-package com.zlabwork.genesis;
+package com.zlabwork.genesis.controller;
 
 import com.zlabwork.genesis.common.EventManager;
 import com.zlabwork.genesis.common.SomeEventSource;

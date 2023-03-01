@@ -1,4 +1,4 @@
-package com.zlabwork.genesis;
+package com.zlabwork.genesis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

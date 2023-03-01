@@ -1,4 +1,4 @@
-package com.zlabwork.genesis;
+package com.zlabwork.genesis.controller;
 
 import com.zlabwork.genesis.entity.UserEntity;
 import com.zlabwork.genesis.repository.UserRepository;

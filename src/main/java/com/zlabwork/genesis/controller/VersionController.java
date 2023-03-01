@@ -1,4 +1,4 @@
-package com.zlabwork.genesis;
+package com.zlabwork.genesis.controller;
 
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;

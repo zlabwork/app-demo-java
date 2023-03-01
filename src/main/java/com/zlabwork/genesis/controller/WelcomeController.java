@@ -1,4 +1,4 @@
-package com.zlabwork.genesis;
+package com.zlabwork.genesis.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
