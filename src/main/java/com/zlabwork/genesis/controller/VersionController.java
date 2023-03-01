@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
 import com.zlabwork.genesis.entity.UserEntity;
-import com.zlabwork.genesis.message.CommonResult;
+import com.zlabwork.genesis.message.ResultFormat;
 import com.zlabwork.genesis.message.Version;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,14 +32,14 @@ public class VersionController {
     }
 
     @RequestMapping("/result")
-    public CommonResult<UserEntity> resultMethod() {
+    public ResultFormat<UserEntity> resultMethod() {
 
         UserEntity user = new UserEntity();
         user.setId(1000);
         user.setName("Alina");
         user.setEmail("alina@xxtime.com");
         user.setDate(new Date());
-        return CommonResult.success(user, "it is ok");
+        return ResultFormat.success(user, "it is ok");
     }
 
 }
